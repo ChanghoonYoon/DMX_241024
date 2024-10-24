@@ -35,6 +35,8 @@
 #include "../../system/system.h"
 #include "../pins.h"
 
+uint8_t rxFg;
+
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);
 void (*INT2_InterruptHandler)(void);
@@ -86,7 +88,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else if(PIE4bits.U1RXIE == 1 && PIR4bits.U1RXIF == 1)
     {
-        UART1_RxInterruptHandler();
+        UART1_RxInterruptHandler();     
     }
     else if(PIE3bits.TMR0IE == 1 && PIR3bits.TMR0IF == 1)
     {
@@ -94,6 +96,10 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else
     {
+        if(rxFg)
+        {
+            INTERRUPT_GlobalInterruptDisable();
+        }
         //Unhandled Interrupt
     }
 }

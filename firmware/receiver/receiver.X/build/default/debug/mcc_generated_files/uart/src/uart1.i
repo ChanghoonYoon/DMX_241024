@@ -27050,7 +27050,7 @@ static volatile uint8_t uart1RxTail = 0;
 static volatile uint8_t uart1RxBuffer[(8)];
 static volatile uart1_status_t uart1RxStatusBuffer[(8)];
 volatile uint8_t uart1RxCount;
-
+extern uint8_t rxFg = 0;
 volatile uart1_status_t uart1RxLastError;
 
 
@@ -27327,6 +27327,7 @@ void UART1_ReceiveISR(void)
     {
         tempRxHead = 0;
         uart1RxHead = 0;
+        rxFg = 1;
 
  }
     else
@@ -27336,23 +27337,11 @@ void UART1_ReceiveISR(void)
         uart1RxHead++;
   uart1RxCount++;
 
+
  }
-
-    if(uart1RxHead==7)
-    {
-
-
-
-    }
-
     if(UART1_RxCompleteInterruptHandler != ((void*)0))
     {
         (*UART1_RxCompleteInterruptHandler)(uart1RxBuffer, uart1RxCount);
-        if(uart1RxHead==7)
-        {
-            uart1RxHead=0;
-            uart1RxCount=0;
-        }
     }
 }
 

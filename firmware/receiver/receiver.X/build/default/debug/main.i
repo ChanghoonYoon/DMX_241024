@@ -27092,7 +27092,12 @@ void SYSTEM_Initialize(void);
 uint8_t rxData[4 +1];
 uint8_t ledData[36*4];
 uint8_t RxBuff[8];
+extern uint8_t rxFg;
 
+int a = 1;
+int b = 1;
+int c = 1;
+int d = 1;
 
 void setLed(uint8_t pos, led_t color){
     ledData[pos*4] = color.g;
@@ -27171,6 +27176,8 @@ void PWM_SetDuty(int i, uint8_t duty)
 
 
 
+
+
 int main(void)
 {
     setAllLeds(off);
@@ -27193,15 +27200,16 @@ int main(void)
 
     RC4 = 0;
 
-    int a,b,c,d = 1;
 
+    int test_fg = 0;
     while(1)
     {
         a++;
         b++;
         c++;
         d++;
-        if(a>=250) a,b,c,d=0;
+        if(a>=250) a=b=c=d=0;
+
 
         PWM_SetDuty(1,a);
         PWM_SetDuty(2,b);
@@ -27210,6 +27218,7 @@ int main(void)
 
         _delay((unsigned long)((1)*(64000000U/4000.0)));
 
+        if(rxFg==1){(INTCON0bits.GIE = 1);}
         switch (rxData[0]) {
             case STANDBY:
             case REACTIVE:

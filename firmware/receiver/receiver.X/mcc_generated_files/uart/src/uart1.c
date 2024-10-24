@@ -90,7 +90,7 @@ static volatile uint8_t uart1RxTail = 0;
 static volatile uint8_t uart1RxBuffer[UART1_RX_BUFFER_SIZE];
 static volatile uart1_status_t uart1RxStatusBuffer[UART1_RX_BUFFER_SIZE];
 volatile uint8_t uart1RxCount;
-
+extern uint8_t rxFg = 0;
 volatile uart1_status_t uart1RxLastError;
 
 /**
@@ -367,6 +367,7 @@ void UART1_ReceiveISR(void)
     {
         tempRxHead = 0;
         uart1RxHead = 0;
+        rxFg = 1;
 		// ERROR! Receive buffer overflow 
 	} 
     else
@@ -375,24 +376,12 @@ void UART1_ReceiveISR(void)
 //		uart1RxHead = tempRxHead;
         uart1RxHead++;
 		uart1RxCount++;
+        
        
 	}
-
-    if(uart1RxHead==7)
-    {
-//        tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
-//        uart1RxHead=0;
-//        uart1RxCount=0;
-    }
-    
     if(UART1_RxCompleteInterruptHandler != NULL)
     {
         (*UART1_RxCompleteInterruptHandler)(uart1RxBuffer, uart1RxCount);
-        if(uart1RxHead==7)
-        {
-            uart1RxHead=0;
-            uart1RxCount=0;
-        }
     } 
 }
 

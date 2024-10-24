@@ -43,7 +43,12 @@
 uint8_t rxData[COLOR_COUNT+1]; // Holds mode, then 3 bytes of data depending on the mode
 uint8_t ledData[NUM_LEDS*COLOR_COUNT];
 uint8_t RxBuff[8];
-
+extern uint8_t rxFg;
+       
+int a = 1;
+int b = 1;
+int c = 1;
+int d = 1;
 
 void setLed(uint8_t pos, led_t color){
     ledData[pos*4] = color.g;
@@ -122,6 +127,8 @@ void PWM_SetDuty(int i, uint8_t duty)
 /*
     Main application
 */
+
+
 int main(void)
 {
     setAllLeds(off);
@@ -144,22 +151,25 @@ int main(void)
     //INTERRUPT_GlobalInterruptDisable(); 
     RC4 = 0;
 
-    int a,b,c,d = 1;
     
+    int test_fg = 0;
     while(1)
     {
         a++;
         b++;
         c++;
         d++;
-        if(a>=250) a,b,c,d=0;
+        if(a>=250) a=b=c=d=0;
+      
         
         PWM_SetDuty(1,a);
         PWM_SetDuty(2,b);
         PWM_SetDuty(3,c);
         PWM_SetDuty(4,d);
-        
+     
         __delay_ms(1);
+        
+        if(rxFg==1){INTERRUPT_GlobalInterruptEnable();}
         
         switch (rxData[0]) {
             case STANDBY:

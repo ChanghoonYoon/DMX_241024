@@ -27002,6 +27002,8 @@ void SYSTEM_Initialize(void);
 
 
 
+uint8_t rxFg;
+
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);
 void (*INT2_InterruptHandler)(void);
@@ -27036,7 +27038,7 @@ void INTERRUPT_Initialize (void)
 
 
 }
-# 80 "mcc_generated_files/system/src/interrupt.c"
+# 82 "mcc_generated_files/system/src/interrupt.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
@@ -27054,6 +27056,10 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     }
     else
     {
+        if(rxFg)
+        {
+            (INTCON0bits.GIE = 0);
+        }
 
     }
 }
