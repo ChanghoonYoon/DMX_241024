@@ -39,6 +39,7 @@
 #include "mcc_generated_files/system/system.h"
 
 uint8_t dmxData[NODES*COLOR_COUNT+1];
+int16_t num = 0;
 
 led_t updateStandbyVals(led_t currentVals){
     uint8_t r = currentVals.r;
@@ -97,12 +98,45 @@ void standby(void){
 
 void reactive(void){
     uint8_t index = 0;
-    dmxData[index++] = 0x01; 
+    dmxData[index++] = 0x01;  //dmxData[0] = 0x01 
     for(uint8_t i = 0; i < NODES; i++){
         dmxData[index++] = i;
         dmxData[index++] = i;
         dmxData[index++] = i;
         dmxData[index++] = i;
+    }
+}
+
+void increase_Val(void){
+    uint8_t index = 0;
+    dmxData[index++] = 0x01;  //dmxData[0] = 0x01 
+    for(uint8_t i = 0; i < NODES; i++){
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+    }
+}
+
+void increase_Num(void){
+    uint8_t index = 0;
+    dmxData[index++] = 0x01;  //dmxData[0] = 0x01 
+    for(uint8_t i = 0; i < NODES; i++){
+        dmxData[index++] = i+1;
+        dmxData[index++] = i+2;
+        dmxData[index++] = i+3;
+        dmxData[index++] = i+4;
+    }
+}
+
+void button_Num(void){
+    uint8_t index = 0;
+    dmxData[index++] = 0x01;  //dmxData[0] = 0x01 
+    for(uint8_t i = 0; i < NODES; i++){
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
     }
 }
 
@@ -127,22 +161,29 @@ int main(void)
 
     // Disable the Global Interrupts 
     //INTERRUPT_GlobalInterruptDisable(); 
-    RC4 = 1;
+    
+    
+    RC4 = 1; //Set tx in UART 485
+//    mode = STANDBY;
     mode = REACTIVE;
     PreKey = CurKey = RA2;
     while(1)
     {
         CurKey = RA2;
-        if(CurKey == 0 && PreKey == 1)
+        
+        if(PORTAbits.RA2 == 0)
         {
             switch(mode){
                 case STANDBY:
                     standby();            
                     break;
                 case REACTIVE:
-                    reactive();        
-                    PORTB ^= 0xFF;
-                    __delay_ms(1000);
+//                    reactive();       
+                      increase_Val();
+                      
+//                    increase_Num();
+                      PORTB ^= 0xFF; // toggle leds
+//                      __delay_ms(100);
                     break;
                 default:
                     break;
@@ -152,7 +193,14 @@ int main(void)
                 DMX_sync();
                 DMAnCON0bits.SIRQEN = 1;            
             }
+            
+            num = num + 1;
+            __delay_ms(1000);
         }
-        PreKey = CurKey;
+     
+        if(num >= 255)
+        { 
+            num = 0;
+        }
     }    
 }
