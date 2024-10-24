@@ -112,27 +112,27 @@ REACTIVE 2
 [v _PWM2_16BIT_Period_DefaultInterruptHandler PWM2_16BIT_Period_DefaultInterruptHandler `(v  1 s 1 PWM2_16BIT_Period_DefaultInterruptHandler ]
 "39 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
-"44 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
+"45 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
-"82
+"83
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
-"117
+"121
 [v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
-"126
-[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
 "130
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"134
 [v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"143
+"147
 [v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
-"152
-[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
 "156
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"160
 [v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"169
+"173
 [v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
-"178
-[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
 "182
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+"186
 [v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
 "40 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/mvio/vddio2.c
 [v _VDDIO2_Initialize VDDIO2_Initialize `(v  1 e 1 0 ]
@@ -154,59 +154,59 @@ REACTIVE 2
 [v _TMR0_OverflowCallbackRegister TMR0_OverflowCallbackRegister `(v  1 e 1 0 ]
 "140
 [v _TMR0_DefaultOverflowCallback TMR0_DefaultOverflowCallback `(v  1 s 1 TMR0_DefaultOverflowCallback ]
-"118 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
+"121 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_Initialize UART1_Initialize `(v  1 e 1 0 ]
-"180
+"183
 [v _UART1_Deinitialize UART1_Deinitialize `(v  1 e 1 0 ]
-"215
+"218
 [v _UART1_TransmitEnable UART1_TransmitEnable `T(v  1 e 1 0 ]
-"220
+"223
 [v _UART1_TransmitDisable UART1_TransmitDisable `T(v  1 e 1 0 ]
-"245
+"248
 [v _UART1_AutoBaudSet UART1_AutoBaudSet `T(v  1 e 1 0 ]
-"258
+"261
 [v _UART1_AutoBaudQuery UART1_AutoBaudQuery `T(a  1 e 1 0 ]
-"297
+"300
 [v _UART1_IsRxReady UART1_IsRxReady `(a  1 e 1 0 ]
-"302
+"305
 [v _UART1_IsTxReady UART1_IsTxReady `(a  1 e 1 0 ]
-"307
+"310
 [v _UART1_IsTxDone UART1_IsTxDone `(a  1 e 1 0 ]
-"312
+"315
 [v _UART1_ErrorGet UART1_ErrorGet `(ui  1 e 2 0 ]
-"319
+"322
 [v _UART1_Read UART1_Read `(uc  1 e 1 0 ]
-"337
+"340
 [v _UART1_ReceiveISR UART1_ReceiveISR `(v  1 e 1 0 ]
-"389
+"392
 [v _UART1_Write UART1_Write `(v  1 e 1 0 ]
-"414
+"417
 [v _UART1_TransmitISR UART1_TransmitISR `(v  1 e 1 0 ]
-"440
+"443
 [v _UART1_DefaultFramingErrorCallback UART1_DefaultFramingErrorCallback `(v  1 s 1 UART1_DefaultFramingErrorCallback ]
-"445
+"448
 [v _UART1_DefaultOverrunErrorCallback UART1_DefaultOverrunErrorCallback `(v  1 s 1 UART1_DefaultOverrunErrorCallback ]
-"450
+"453
 [v _UART1_DefaultParityErrorCallback UART1_DefaultParityErrorCallback `(v  1 s 1 UART1_DefaultParityErrorCallback ]
-"455
+"458
 [v _UART1_FramingErrorCallbackRegister UART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
-"463
+"466
 [v _UART1_OverrunErrorCallbackRegister UART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
-"471
+"474
 [v _UART1_ParityErrorCallbackRegister UART1_ParityErrorCallbackRegister `(v  1 e 1 0 ]
-"478
+"481
 [v _UART1_RxCompleteCallbackRegister UART1_RxCompleteCallbackRegister `(v  1 e 1 0 ]
-"486
+"489
 [v _UART1_TxCompleteCallbackRegister UART1_TxCompleteCallbackRegister `(v  1 e 1 0 ]
-[s S1613 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
+[s S1615 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
 "29 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X/main.h
-[v _red red `S1613  1 e 4 0 ]
+[v _red red `S1615  1 e 4 0 ]
 "30
-[v _green green `S1613  1 e 4 0 ]
+[v _green green `S1615  1 e 4 0 ]
 "31
-[v _yellow yellow `S1613  1 e 4 0 ]
+[v _yellow yellow `S1615  1 e 4 0 ]
 "32
-[v _off off `S1613  1 e 4 0 ]
+[v _off off `S1615  1 e 4 0 ]
 "349 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X/mcc_generated_files/uart/uart1.h
 [v _UART1_TxInterruptHandler UART1_TxInterruptHandler `*.37(v  1 e 2 0 ]
 "374
@@ -233,7 +233,7 @@ REACTIVE 2
 [v _DMAnSSZ DMAnSSZ `VEus  1 e 2 @246 ]
 "7654
 [v _DMAnSSA DMAnSSA `VEum  1 e 3 @248 ]
-[s S1946 . 1 `uc 1 XIP 1 0 :1:0 
+[s S1948 . 1 `uc 1 XIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 AIRQEN 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -242,17 +242,17 @@ REACTIVE 2
 `uc 1 EN 1 0 :1:7 
 ]
 "7876
-[u S1954 . 1 `S1946 1 . 1 0 ]
-[v _DMAnCON0bits DMAnCON0bits `VES1954  1 e 1 @251 ]
-[s S1928 . 1 `uc 1 SSTP 1 0 :1:0 
+[u S1956 . 1 `S1948 1 . 1 0 ]
+[v _DMAnCON0bits DMAnCON0bits `VES1956  1 e 1 @251 ]
+[s S1930 . 1 `uc 1 SSTP 1 0 :1:0 
 `uc 1 SMODE 1 0 :2:1 
 `uc 1 SMR 1 0 :2:3 
 `uc 1 DSTP 1 0 :1:5 
 `uc 1 DMODE 1 0 :2:6 
 ]
 "7920
-[u S1934 . 1 `S1928 1 . 1 0 ]
-[v _DMAnCON1bits DMAnCON1bits `VES1934  1 e 1 @252 ]
+[u S1936 . 1 `S1930 1 . 1 0 ]
+[v _DMAnCON1bits DMAnCON1bits `VES1936  1 e 1 @252 ]
 "8020
 [v _DMAnSIRQ DMAnSIRQ `VEuc  1 e 1 @254 ]
 "8790
@@ -286,7 +286,7 @@ REACTIVE 2
 [v _TRISB TRISB `VEuc  1 e 1 @329 ]
 "9333
 [v _TRISC TRISC `VEuc  1 e 1 @330 ]
-[s S1857 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1859 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -296,8 +296,8 @@ REACTIVE 2
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "9350
-[u S1866 . 1 `S1857 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1866  1 e 1 @330 ]
+[u S1868 . 1 `S1859 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1868  1 e 1 @330 ]
 "9395
 [v _TRISE TRISE `VEuc  1 e 1 @332 ]
 "10029
@@ -348,34 +348,34 @@ REACTIVE 2
 [v _U1P3H U1P3H `VEuc  1 e 1 @703 ]
 "17860
 [v _U1CON0 U1CON0 `VEuc  1 e 1 @704 ]
-[s S1307 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1309 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 ]
 "17893
-[s S1312 . 1 `uc 1 U1MODE 1 0 :4:0 
+[s S1314 . 1 `uc 1 U1MODE 1 0 :4:0 
 `uc 1 U1RXEN 1 0 :1:4 
 `uc 1 U1TXEN 1 0 :1:5 
 `uc 1 U1ABDEN 1 0 :1:6 
 `uc 1 U1BRGS 1 0 :1:7 
 ]
-[s S1318 . 1 `uc 1 U1MODE0 1 0 :1:0 
+[s S1320 . 1 `uc 1 U1MODE0 1 0 :1:0 
 `uc 1 U1MODE1 1 0 :1:1 
 `uc 1 U1MODE2 1 0 :1:2 
 `uc 1 U1MODE3 1 0 :1:3 
 ]
-[s S1323 . 1 `uc 1 MODE 1 0 :4:0 
+[s S1325 . 1 `uc 1 MODE 1 0 :4:0 
 `uc 1 RXEN 1 0 :1:4 
 `uc 1 TXEN 1 0 :1:5 
 `uc 1 ABDEN 1 0 :1:6 
 `uc 1 BRGS 1 0 :1:7 
 ]
-[u S1329 . 1 `S1307 1 . 1 0 `S1312 1 . 1 0 `S1318 1 . 1 0 `S1323 1 . 1 0 ]
-[v _U1CON0bits U1CON0bits `VES1329  1 e 1 @704 ]
+[u S1331 . 1 `S1309 1 . 1 0 `S1314 1 . 1 0 `S1320 1 . 1 0 `S1325 1 . 1 0 ]
+[v _U1CON0bits U1CON0bits `VES1331  1 e 1 @704 ]
 "17988
 [v _U1CON1 U1CON1 `VEuc  1 e 1 @705 ]
-[s S1271 . 1 `uc 1 SENDB 1 0 :1:0 
+[s S1273 . 1 `uc 1 SENDB 1 0 :1:0 
 `uc 1 BRKOVR 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 RXBIMD 1 0 :1:3 
@@ -384,7 +384,7 @@ REACTIVE 2
 `uc 1 ON 1 0 :1:7 
 ]
 "18013
-[s S1279 . 1 `uc 1 U1SENDB 1 0 :1:0 
+[s S1281 . 1 `uc 1 U1SENDB 1 0 :1:0 
 `uc 1 U1BRKOVR 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 U1RXBIMD 1 0 :1:3 
@@ -392,11 +392,11 @@ REACTIVE 2
 `uc 1 . 1 0 :2:5 
 `uc 1 U1ON 1 0 :1:7 
 ]
-[u S1287 . 1 `S1271 1 . 1 0 `S1279 1 . 1 0 ]
-[v _U1CON1bits U1CON1bits `VES1287  1 e 1 @705 ]
+[u S1289 . 1 `S1273 1 . 1 0 `S1281 1 . 1 0 ]
+[v _U1CON1bits U1CON1bits `VES1289  1 e 1 @705 ]
 "18068
 [v _U1CON2 U1CON2 `VEuc  1 e 1 @706 ]
-[s S1793 . 1 `uc 1 FLO 1 0 :2:0 
+[s S1795 . 1 `uc 1 FLO 1 0 :2:0 
 `uc 1 TXPOL 1 0 :1:2 
 `uc 1 C0EN 1 0 :1:3 
 `uc 1 STP 1 0 :2:4 
@@ -404,27 +404,27 @@ REACTIVE 2
 `uc 1 RUNOVF 1 0 :1:7 
 ]
 "18105
-[s S1800 . 1 `uc 1 FLO0 1 0 :1:0 
+[s S1802 . 1 `uc 1 FLO0 1 0 :1:0 
 `uc 1 FLO1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 STP0 1 0 :1:4 
 `uc 1 STP1 1 0 :1:5 
 ]
-[s S1806 . 1 `uc 1 U1FLO 1 0 :2:0 
+[s S1808 . 1 `uc 1 U1FLO 1 0 :2:0 
 `uc 1 U1TXPOL 1 0 :1:2 
 `uc 1 U1C0EN 1 0 :1:3 
 `uc 1 U1STP 1 0 :2:4 
 `uc 1 U1RXPOL 1 0 :1:6 
 `uc 1 U1RUNOVF 1 0 :1:7 
 ]
-[s S1813 . 1 `uc 1 U1FLO0 1 0 :1:0 
+[s S1815 . 1 `uc 1 U1FLO0 1 0 :1:0 
 `uc 1 U1FLO1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 U1STP0 1 0 :1:4 
 `uc 1 U1STP1 1 0 :1:5 
 ]
-[u S1819 . 1 `S1793 1 . 1 0 `S1800 1 . 1 0 `S1806 1 . 1 0 `S1813 1 . 1 0 ]
-[v _U1CON2bits U1CON2bits `VES1819  1 e 1 @706 ]
+[u S1821 . 1 `S1795 1 . 1 0 `S1802 1 . 1 0 `S1808 1 . 1 0 `S1815 1 . 1 0 ]
+[v _U1CON2bits U1CON2bits `VES1821  1 e 1 @706 ]
 "18210
 [v _U1BRG U1BRG `VEus  1 e 2 @707 ]
 "18217
@@ -435,24 +435,24 @@ REACTIVE 2
 [v _U1FIFO U1FIFO `VEuc  1 e 1 @709 ]
 "18387
 [v _U1UIR U1UIR `VEuc  1 e 1 @710 ]
-[s S1357 . 1 `uc 1 . 1 0 :2:0 
+[s S1359 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 ABDIE 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 ABDIF 1 0 :1:6 
 `uc 1 WUIF 1 0 :1:7 
 ]
 "18408
-[s S1363 . 1 `uc 1 . 1 0 :2:0 
+[s S1365 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 U1ABDIE 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 U1ABDIF 1 0 :1:6 
 `uc 1 U1WUIF 1 0 :1:7 
 ]
-[u S1369 . 1 `S1357 1 . 1 0 `S1363 1 . 1 0 ]
-[v _U1UIRbits U1UIRbits `VES1369  1 e 1 @710 ]
+[u S1371 . 1 `S1359 1 . 1 0 `S1365 1 . 1 0 ]
+[v _U1UIRbits U1UIRbits `VES1371  1 e 1 @710 ]
 "18443
 [v _U1ERRIR U1ERRIR `VEuc  1 e 1 @711 ]
-[s S1385 . 1 `uc 1 TXCIF 1 0 :1:0 
+[s S1387 . 1 `uc 1 TXCIF 1 0 :1:0 
 `uc 1 RXFOIF 1 0 :1:1 
 `uc 1 RXBKIF 1 0 :1:2 
 `uc 1 FERIF 1 0 :1:3 
@@ -462,7 +462,7 @@ REACTIVE 2
 `uc 1 TXMTIF 1 0 :1:7 
 ]
 "18470
-[s S1394 . 1 `uc 1 U1TXCIF 1 0 :1:0 
+[s S1396 . 1 `uc 1 U1TXCIF 1 0 :1:0 
 `uc 1 U1RXFOIF 1 0 :1:1 
 `uc 1 U1RXBKIF 1 0 :1:2 
 `uc 1 U1FERIF 1 0 :1:3 
@@ -471,8 +471,8 @@ REACTIVE 2
 `uc 1 U1PERIF 1 0 :1:6 
 `uc 1 U1TXMTIF 1 0 :1:7 
 ]
-[u S1403 . 1 `S1385 1 . 1 0 `S1394 1 . 1 0 ]
-[v _U1ERRIRbits U1ERRIRbits `VES1403  1 e 1 @711 ]
+[u S1405 . 1 `S1387 1 . 1 0 `S1396 1 . 1 0 ]
+[v _U1ERRIRbits U1ERRIRbits `VES1405  1 e 1 @711 ]
 "18555
 [v _U1ERRIE U1ERRIE `VEuc  1 e 1 @712 ]
 "20788
@@ -481,32 +481,32 @@ REACTIVE 2
 [v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
 "21180
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
-[s S927 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S929 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "21214
-[s S933 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S935 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
-[s S939 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S941 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
-[s S945 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S947 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S950 . 1 `S927 1 . 1 0 `S933 1 . 1 0 `S939 1 . 1 0 `S945 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES950  1 e 1 @794 ]
+[u S952 . 1 `S929 1 . 1 0 `S935 1 . 1 0 `S941 1 . 1 0 `S947 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES952  1 e 1 @794 ]
 "21304
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "37343
@@ -864,11 +864,11 @@ REACTIVE 2
 [v _PWM2_16BIT_Slice1Output2_InterruptHandler PWM2_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Slice1Output2_InterruptHandler ]
 "45
 [v _PWM2_16BIT_Period_InterruptHandler PWM2_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Period_InterruptHandler ]
-"40 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
+"41 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
-"41
-[v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
 "42
+[v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
+"43
 [v _INT2_InterruptHandler INT2_InterruptHandler `*.37(v  1 e 2 0 ]
 "36 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/timer/src/tmr0.c
 [v _timerTMR0ReloadVal16bit timerTMR0ReloadVal16bit `VEus  1 e 2 0 ]
@@ -883,40 +883,42 @@ REACTIVE 2
 "86
 [v _uart1TxBufferRemaining uart1TxBufferRemaining `VEuc  1 e 1 0 ]
 "88
-[v _uart1RxHead uart1RxHead `VEuc  1 s 1 uart1RxHead ]
+[v _uart1RxHead uart1RxHead `VEuc  1 e 1 0 ]
 "89
 [v _uart1RxTail uart1RxTail `VEuc  1 s 1 uart1RxTail ]
 "90
 [v _uart1RxBuffer uart1RxBuffer `VE[8]uc  1 s 8 uart1RxBuffer ]
-[s S1205 . 1 `uc 1 perr 1 0 :1:0 
+[s S1207 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "91
-[u S1210 . 2 `S1205 1 . 1 0 `ui 1 status 2 0 ]
-[v _uart1RxStatusBuffer uart1RxStatusBuffer `VE[8]S1210  1 s 16 uart1RxStatusBuffer ]
+[u S1212 . 2 `S1207 1 . 1 0 `ui 1 status 2 0 ]
+[v _uart1RxStatusBuffer uart1RxStatusBuffer `VE[8]S1212  1 s 16 uart1RxStatusBuffer ]
 "92
 [v _uart1RxCount uart1RxCount `VEuc  1 e 1 0 ]
 "93
 [v _rxFg rxFg `uc  1 e 1 0 ]
-[s S1205 . 1 `uc 1 perr 1 0 :1:0 
+[s S1207 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
 "94
-[u S1210 . 2 `S1205 1 . 1 0 `ui 1 status 2 0 ]
-[v _uart1RxLastError uart1RxLastError `VES1210  1 e 2 0 ]
-"100
+[u S1212 . 2 `S1207 1 . 1 0 `ui 1 status 2 0 ]
+[v _uart1RxLastError uart1RxLastError `VES1212  1 e 2 0 ]
+"96
+[v _tempRxHead tempRxHead `uc  1 e 1 0 ]
+"103
 [v _UART1_FramingErrorHandler UART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
-"101
-[v _UART1_OverrunErrorHandler UART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
-"102
-[v _UART1_ParityErrorHandler UART1_ParityErrorHandler `*.37(v  1 e 2 0 ]
 "104
+[v _UART1_OverrunErrorHandler UART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"105
+[v _UART1_ParityErrorHandler UART1_ParityErrorHandler `*.37(v  1 e 2 0 ]
+"107
 [v _UART1_TxCompleteInterruptHandler UART1_TxCompleteInterruptHandler `*.37(v  1 s 2 UART1_TxCompleteInterruptHandler ]
-"106
+"109
 [v _UART1_RxCompleteInterruptHandler UART1_RxCompleteInterruptHandler `*.37(v  1 s 2 UART1_RxCompleteInterruptHandler ]
 "132 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\main.c
 [v _main main `(i  1 e 2 0 ]
@@ -928,9 +930,9 @@ REACTIVE 2
 {
 "61
 [v setAllLeds@i i `uc  1 a 1 24 ]
-[s S1613 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
+[s S1615 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
 "60
-[v setAllLeds@color color `S1613  1 p 4 20 ]
+[v setAllLeds@color color `S1615  1 p 4 20 ]
 "64
 } 0
 "67
@@ -938,11 +940,11 @@ REACTIVE 2
 {
 "69
 [v reactive@i i `uc  1 a 1 20 ]
-[s S1613 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
+[s S1615 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
 "68
-[v reactive@color color `S1613  1 a 4 21 ]
+[v reactive@color color `S1615  1 a 4 21 ]
 "67
-[v reactive@F16132 F16132 `S1613  1 s 4 F16132 ]
+[v reactive@F16132 F16132 `S1615  1 s 4 F16132 ]
 "72
 } 0
 "53
@@ -950,16 +952,16 @@ REACTIVE 2
 {
 [v setLed@pos pos `uc  1 p 1 wreg ]
 [v setLed@pos pos `uc  1 p 1 wreg ]
-[s S1613 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
-[v setLed@color color `S1613  1 p 4 13 ]
+[s S1615 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
+[v setLed@color color `S1615  1 p 4 13 ]
 [v setLed@pos pos `uc  1 p 1 19 ]
 "58
 } 0
-"478 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
+"481 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_RxCompleteCallbackRegister UART1_RxCompleteCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART1_RxCompleteCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 13 ]
-"484
+"487
 } 0
 "39 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -971,28 +973,28 @@ REACTIVE 2
 {
 "44
 } 0
-"118 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
+"121 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_Initialize UART1_Initialize `(v  1 e 1 0 ]
 {
-"178
+"181
 } 0
-"471
+"474
 [v _UART1_ParityErrorCallbackRegister UART1_ParityErrorCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART1_ParityErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 13 ]
-"477
+"480
 } 0
-"463
+"466
 [v _UART1_OverrunErrorCallbackRegister UART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART1_OverrunErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 13 ]
-"469
+"472
 } 0
-"455
+"458
 [v _UART1_FramingErrorCallbackRegister UART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
 {
 [v UART1_FramingErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 13 ]
-"461
+"464
 } 0
 "54 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/timer/src/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
@@ -1056,28 +1058,28 @@ REACTIVE 2
 {
 "139
 } 0
-"44 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
+"45 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
-"73
+"74
 } 0
-"178
+"182
 [v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 13 ]
-"180
+"184
 } 0
-"152
+"156
 [v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 13 ]
-"154
+"158
 } 0
-"126
+"130
 [v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 13 ]
-"128
+"132
 } 0
 "39 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -1088,12 +1090,12 @@ REACTIVE 2
 [v _PWM_SetDuty PWM_SetDuty `(v  1 e 1 0 ]
 {
 "116
-[v PWM_SetDuty@dutyCycleValue dutyCycleValue `us  1 a 2 10 ]
+[v PWM_SetDuty@dutyCycleValue dutyCycleValue `us  1 a 2 7 ]
 "113
-[v PWM_SetDuty@period period `us  1 a 2 8 ]
+[v PWM_SetDuty@period period `us  1 a 2 5 ]
 "110
-[v PWM_SetDuty@i i `i  1 p 2 5 ]
-[v PWM_SetDuty@duty duty `uc  1 p 1 7 ]
+[v PWM_SetDuty@i i `i  1 p 2 0 ]
+[v PWM_SetDuty@duty duty `uc  1 p 1 2 ]
 "125
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul32.c
@@ -1110,9 +1112,9 @@ REACTIVE 2
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 {
 "10
-[v ___lldiv@quotient quotient `ul  1 a 4 0 ]
+[v ___lldiv@quotient quotient `ul  1 a 4 33 ]
 "11
-[v ___lldiv@counter counter `uc  1 a 1 4 ]
+[v ___lldiv@counter counter `uc  1 a 1 37 ]
 "7
 [v ___lldiv@dividend dividend `ul  1 p 4 25 ]
 [v ___lldiv@divisor divisor `ul  1 p 4 29 ]
@@ -1157,34 +1159,34 @@ REACTIVE 2
 {
 "39
 } 0
-"82 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
+"83 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
-"106
+"110
 } 0
-"414 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
+"417 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\mcc_generated_files/uart/src/uart1.c
 [v _UART1_TransmitISR UART1_TransmitISR `(v  1 e 1 0 ]
 {
-"416
+"419
 [v UART1_TransmitISR@tempTxTail tempTxTail `uc  1 a 1 0 ]
-"434
+"437
 } 0
-"337
+"340
 [v _UART1_ReceiveISR UART1_ReceiveISR `(v  1 e 1 0 ]
 {
-"339
+"342
 [v UART1_ReceiveISR@regValue regValue `uc  1 a 1 10 ]
-"387
+"390
 } 0
-"445
+"448
 [v _UART1_DefaultOverrunErrorCallback UART1_DefaultOverrunErrorCallback `(v  1 s 1 UART1_DefaultOverrunErrorCallback ]
 {
-"448
+"451
 } 0
-"440
+"443
 [v _UART1_DefaultFramingErrorCallback UART1_DefaultFramingErrorCallback `(v  1 s 1 UART1_DefaultFramingErrorCallback ]
 {
-"443
+"446
 } 0
 "103 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\receiver\receiver.X\main.c
 [v _DMXRcvCallback DMXRcvCallback `(v  1 e 1 0 ]

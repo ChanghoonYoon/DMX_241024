@@ -36,7 +36,8 @@
 #include "../pins.h"
 
 uint8_t rxFg;
-
+extern uint8_t uart1RxHead;
+extern uint8_t tempRxHead;
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);
 void (*INT2_InterruptHandler)(void);
@@ -98,8 +99,11 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         if(rxFg)
         {
-            UART1_RxInterruptHandler();     
-//            INTERRUPT_GlobalInterruptDisable();
+//            UART1_RxInterruptHandler();     
+            INTERRUPT_GlobalInterruptDisable();
+            tempRxHead = 0;
+            uart1RxHead = 0;
+            
         }
         //Unhandled Interrupt
     }

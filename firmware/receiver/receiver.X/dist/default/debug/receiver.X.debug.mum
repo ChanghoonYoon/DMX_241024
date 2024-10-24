@@ -1,7 +1,7 @@
 
 18F24Q24 Memory Summary:
-    Program space        used   B8Ah (  2954) of  8000h bytes   (  9.0%)
-    Data space           used   136h (   310) of   800h bytes   ( 15.1%)
+    Program space        used   B88h (  2952) of  8000h bytes   (  9.0%)
+    Data space           used   137h (   311) of   800h bytes   ( 15.2%)
     Configuration bits   used     Eh (    14) of     Fh words   ( 93.3%)
     EEPROM space         used     0h (     0) of   200h bytes   (  0.0%)
     ID Location space    used     0h (     0) of    40h bytes   (  0.0%)

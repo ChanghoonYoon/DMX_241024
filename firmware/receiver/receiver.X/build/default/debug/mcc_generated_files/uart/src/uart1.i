@@ -27045,13 +27045,16 @@ static volatile uint8_t uart1TxTail = 0;
 static volatile uint8_t uart1TxBuffer[(8)];
 volatile uint8_t uart1TxBufferRemaining;
 
-static volatile uint8_t uart1RxHead = 0;
+extern volatile uint8_t uart1RxHead = 0;
 static volatile uint8_t uart1RxTail = 0;
 static volatile uint8_t uart1RxBuffer[(8)];
 static volatile uart1_status_t uart1RxStatusBuffer[(8)];
 volatile uint8_t uart1RxCount;
 extern uint8_t rxFg = 0;
 volatile uart1_status_t uart1RxLastError;
+
+uint8_t tempRxHead;
+
 
 
 
@@ -27297,7 +27300,7 @@ uint8_t UART1_Read(void)
 void UART1_ReceiveISR(void)
 {
     uint8_t regValue;
- uint8_t tempRxHead;
+
 
     uart1RxStatusBuffer[uart1RxHead].status = 0;
 

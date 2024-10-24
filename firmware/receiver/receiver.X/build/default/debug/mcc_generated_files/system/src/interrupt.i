@@ -27003,7 +27003,8 @@ void SYSTEM_Initialize(void);
 
 
 uint8_t rxFg;
-
+extern uint8_t uart1RxHead;
+extern uint8_t tempRxHead;
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);
 void (*INT2_InterruptHandler)(void);
@@ -27038,7 +27039,7 @@ void INTERRUPT_Initialize (void)
 
 
 }
-# 82 "mcc_generated_files/system/src/interrupt.c"
+# 83 "mcc_generated_files/system/src/interrupt.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
@@ -27058,7 +27059,10 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     {
         if(rxFg)
         {
-            UART1_RxInterruptHandler();
+
+            (INTCON0bits.GIE = 0);
+            tempRxHead = 0;
+            uart1RxHead = 0;
 
         }
 
