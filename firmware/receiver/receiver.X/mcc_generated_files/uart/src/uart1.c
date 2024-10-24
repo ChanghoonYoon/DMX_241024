@@ -103,7 +103,7 @@ void (*UART1_ParityErrorHandler)(void);
 void (*UART1_TxInterruptHandler)(void);
 static void (*UART1_TxCompleteInterruptHandler)(void);
 void (*UART1_RxInterruptHandler)(void);
-static void (*UART1_RxCompleteInterruptHandler)(void);
+static void (*UART1_RxCompleteInterruptHandler)(uint8_t* uart1RxBbuffer, uint8_t uart1RxCount);
 
 static void UART1_DefaultFramingErrorCallback(void);
 static void UART1_DefaultOverrunErrorCallback(void);
@@ -377,12 +377,7 @@ void UART1_ReceiveISR(void)
 		uart1RxCount++;
        
 	}
-<<<<<<< HEAD
-    
-    // Error : Index order is changed
-=======
-    //
->>>>>>> 9ac98ea802dd53dc1fa838d063167a574c46e21c
+
     if(uart1RxHead==7)
     {
 //        tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
@@ -392,7 +387,7 @@ void UART1_ReceiveISR(void)
     
     if(UART1_RxCompleteInterruptHandler != NULL)
     {
-        (*UART1_RxCompleteInterruptHandler)();
+        (*UART1_RxCompleteInterruptHandler)(uart1RxBuffer, uart1RxCount);
         if(uart1RxHead==7)
         {
             uart1RxHead=0;

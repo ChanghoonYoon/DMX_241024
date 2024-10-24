@@ -27063,7 +27063,7 @@ void (*UART1_ParityErrorHandler)(void);
 void (*UART1_TxInterruptHandler)(void);
 static void (*UART1_TxCompleteInterruptHandler)(void);
 void (*UART1_RxInterruptHandler)(void);
-static void (*UART1_RxCompleteInterruptHandler)(void);
+static void (*UART1_RxCompleteInterruptHandler)(uint8_t* uart1RxBbuffer, uint8_t uart1RxCount);
 
 static void UART1_DefaultFramingErrorCallback(void);
 static void UART1_DefaultOverrunErrorCallback(void);
@@ -27338,7 +27338,6 @@ void UART1_ReceiveISR(void)
 
  }
 
-
     if(uart1RxHead==7)
     {
 
@@ -27348,7 +27347,7 @@ void UART1_ReceiveISR(void)
 
     if(UART1_RxCompleteInterruptHandler != ((void*)0))
     {
-        (*UART1_RxCompleteInterruptHandler)();
+        (*UART1_RxCompleteInterruptHandler)(uart1RxBuffer, uart1RxCount);
         if(uart1RxHead==7)
         {
             uart1RxHead=0;

@@ -26230,6 +26230,66 @@ unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
 # 35 "main.c" 2
 
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 421 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 37 "main.c" 2
+
 # 1 "./main.h" 1
 # 18 "./main.h"
 typedef struct {
@@ -26247,17 +26307,17 @@ led_t red = {.r = 100, .g = 0, .b = 0, .w = 0};
 led_t green = {.r = 0, .g = 100, .b = 0, .w = 0};
 led_t yellow = {.r = 100, .g = 100, .b = 0, .w = 0};
 led_t off = {.r = 0, .g = 0, .b = 0, .w = 0};
-# 36 "main.c" 2
+# 38 "main.c" 2
 
 # 1 "./dmx.h" 1
 # 15 "./dmx.h"
 void DMX_Initialize(void);
-# 37 "main.c" 2
+# 39 "main.c" 2
 
 # 1 "./dma.h" 1
 # 15 "./dma.h"
 void DMA_Initialize(void);
-# 38 "main.c" 2
+# 40 "main.c" 2
 
 # 1 "./mcc_generated_files/system/system.h" 1
 # 41 "./mcc_generated_files/system/system.h"
@@ -27026,11 +27086,13 @@ void INT2_DefaultInterruptHandler(void);
 # 49 "./mcc_generated_files/system/../uart/../system/system.h" 2
 # 59 "./mcc_generated_files/system/../uart/../system/system.h"
 void SYSTEM_Initialize(void);
-# 39 "main.c" 2
+# 41 "main.c" 2
 
 
 uint8_t rxData[4 +1];
 uint8_t ledData[36*4];
+uint8_t RxBuff[8];
+
 
 void setLed(uint8_t pos, led_t color){
     ledData[pos*4] = color.g;
@@ -27082,6 +27144,12 @@ void dmxToLed(void) {
     }
 }
 
+void DMXRcvCallback(uint8_t* pData, int16_t length)
+{
+
+    strcpy(RxBuff, pData) ;
+}
+
 
 
 
@@ -27096,6 +27164,9 @@ int main(void)
 
     DMX_Initialize();
     DMA_Initialize();
+
+
+    UART1_RxCompleteCallbackRegister(DMXRcvCallback);
 
 
     (INTCON0bits.GIE = 1);

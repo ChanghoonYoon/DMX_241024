@@ -33,6 +33,8 @@
     THIS SOFTWARE.
 */
 #include <xc.h>
+#include <stdint.h>
+#include <string.h>
 #include "main.h"
 #include "dmx.h"
 #include "dma.h"
@@ -40,6 +42,8 @@
 
 uint8_t rxData[COLOR_COUNT+1]; // Holds mode, then 3 bytes of data depending on the mode
 uint8_t ledData[NUM_LEDS*COLOR_COUNT];
+uint8_t RxBuff[8];
+
 
 void setLed(uint8_t pos, led_t color){
     ledData[pos*4] = color.g;
@@ -91,6 +95,12 @@ void dmxToLed(void) {
     }
 }
 
+void DMXRcvCallback(uint8_t* pData, int16_t length)
+{
+//    memcpy(RxBuff, pData, length) ;
+    strcpy(RxBuff, pData) ;
+}
+
 /*
     Main application
 */
@@ -105,6 +115,9 @@ int main(void)
 
     DMX_Initialize();
     DMA_Initialize();
+    
+    //Rx Callback
+    UART1_RxCompleteCallbackRegister(DMXRcvCallback);
     
     // Enable the Global Interrupts 
     INTERRUPT_GlobalInterruptEnable(); 
