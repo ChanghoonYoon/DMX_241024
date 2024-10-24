@@ -377,8 +377,12 @@ void UART1_ReceiveISR(void)
 		uart1RxCount++;
        
 	}
+<<<<<<< HEAD
     
     // Error : Index order is changed
+=======
+    //
+>>>>>>> 9ac98ea802dd53dc1fa838d063167a574c46e21c
     if(uart1RxHead==7)
     {
 //        tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
