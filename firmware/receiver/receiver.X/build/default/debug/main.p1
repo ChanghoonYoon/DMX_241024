@@ -66,6 +66,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "52162
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h: 52162: extern volatile __bit RC4 __attribute__((address(0xA94)));
 [v _RC4 `Vb ~T0 @X0 0 e@2708 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.50\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
 "290 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h: 290: __asm("ICSPLOCK equ 038h");
 [; <" ICSPLOCK equ 038h ;# ">
@@ -2718,55 +2722,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 145:     RC4 = 0;
 [e = _RC4 -> -> 0 `i `b ]
 "147
-[; ;main.c: 147:     while(1)
-[e :U 2168 ]
-"148
-[; ;main.c: 148:     {
-{
+[; ;main.c: 147:     int a,b,c,d = 1;
+[v _a `i ~T0 @X0 1 a ]
+[v _b `i ~T0 @X0 1 a ]
+[v _c `i ~T0 @X0 1 a ]
+[v _d `i ~T0 @X0 1 a ]
+[e = _d -> 1 `i ]
 "149
-[; ;main.c: 149:         PWM_SetDuty(1,0);
-[e ( _PWM_SetDuty (2 , -> 1 `i -> -> 0 `i `uc ]
+[; ;main.c: 149:     while(1)
+[e :U 2168 ]
 "150
-[; ;main.c: 150:         PWM_SetDuty(2,255);
-[e ( _PWM_SetDuty (2 , -> 2 `i -> -> 255 `i `uc ]
-"151
-[; ;main.c: 151:         PWM_SetDuty(3,255);
-[e ( _PWM_SetDuty (2 , -> 3 `i -> -> 255 `i `uc ]
-"152
-[; ;main.c: 152:         PWM_SetDuty(4,255);
-[e ( _PWM_SetDuty (2 , -> 4 `i -> -> 255 `i `uc ]
-"154
-[; ;main.c: 154:         switch (rxData[0]) {
-[e $U 2171  ]
+[; ;main.c: 150:     {
 {
+"151
+[; ;main.c: 151:         a++;
+[e ++ _a -> 1 `i ]
+"152
+[; ;main.c: 152:         b++;
+[e ++ _b -> 1 `i ]
+"153
+[; ;main.c: 153:         c++;
+[e ++ _c -> 1 `i ]
+"154
+[; ;main.c: 154:         d++;
+[e ++ _d -> 1 `i ]
 "155
-[; ;main.c: 155:             case STANDBY:
-[e :U 2172 ]
-"156
-[; ;main.c: 156:             case REACTIVE:
-[e :U 2173 ]
-"157
-[; ;main.c: 157:                 reactive();
-[e ( _reactive ..  ]
-"158
-[; ;main.c: 158:                 break;
-[e $U 2170  ]
-"159
-[; ;main.c: 159:         }
-}
-[e $U 2170  ]
-[e :U 2171 ]
-[e [\ *U + &U _rxData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rxData `ui `ux , $ . `E15484 1 2172
- , $ . `E15484 2 2173
- 2170 ]
+[; ;main.c: 155:         if(a>=250) a,b,c,d=0;
+[e $ ! >= _a -> 250 `i 2170  ]
+[e ; ; ; _a _b _c = _d -> 0 `i ]
 [e :U 2170 ]
+"157
+[; ;main.c: 157:         PWM_SetDuty(1,a);
+[e ( _PWM_SetDuty (2 , -> 1 `i -> _a `uc ]
+"158
+[; ;main.c: 158:         PWM_SetDuty(2,b);
+[e ( _PWM_SetDuty (2 , -> 2 `i -> _b `uc ]
+"159
+[; ;main.c: 159:         PWM_SetDuty(3,c);
+[e ( _PWM_SetDuty (2 , -> 3 `i -> _c `uc ]
 "160
-[; ;main.c: 160:     }
+[; ;main.c: 160:         PWM_SetDuty(4,d);
+[e ( _PWM_SetDuty (2 , -> 4 `i -> _d `uc ]
+"162
+[; ;main.c: 162:         _delay((unsigned long)((1)*(64000000U/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 64000000 `ul `d .4000.0 `ul ]
+"164
+[; ;main.c: 164:         switch (rxData[0]) {
+[e $U 2172  ]
+{
+"165
+[; ;main.c: 165:             case STANDBY:
+[e :U 2173 ]
+"166
+[; ;main.c: 166:             case REACTIVE:
+[e :U 2174 ]
+"167
+[; ;main.c: 167:                 reactive();
+[e ( _reactive ..  ]
+"168
+[; ;main.c: 168:                 break;
+[e $U 2171  ]
+"169
+[; ;main.c: 169:         }
+}
+[e $U 2171  ]
+[e :U 2172 ]
+[e [\ *U + &U _rxData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rxData `ui `ux , $ . `E15484 1 2173
+ , $ . `E15484 2 2174
+ 2171 ]
+[e :U 2171 ]
+"170
+[; ;main.c: 170:     }
 }
 [e :U 2167 ]
 [e $U 2168  ]
 [e :U 2169 ]
-"161
-[; ;main.c: 161: }
+"171
+[; ;main.c: 171: }
 [e :UE 2166 ]
 }

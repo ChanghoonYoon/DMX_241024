@@ -144,12 +144,22 @@ int main(void)
     //INTERRUPT_GlobalInterruptDisable(); 
     RC4 = 0;
 
+    int a,b,c,d = 1;
+    
     while(1)
     {
-        PWM_SetDuty(1,0);
-        PWM_SetDuty(2,255);
-        PWM_SetDuty(3,255);
-        PWM_SetDuty(4,255);
+        a++;
+        b++;
+        c++;
+        d++;
+        if(a>=250) a,b,c,d=0;
+        
+        PWM_SetDuty(1,a);
+        PWM_SetDuty(2,b);
+        PWM_SetDuty(3,c);
+        PWM_SetDuty(4,d);
+        
+        __delay_ms(1);
         
         switch (rxData[0]) {
             case STANDBY:
