@@ -360,24 +360,29 @@ void UART1_ReceiveISR(void)
  
     regValue = U1RXB;
     
-    tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
+    //tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
+    uart1RxBuffer[uart1RxHead] = regValue;
     
-    if (tempRxHead == uart1RxTail) 
+    if (4 == uart1RxHead) 
     {
+        tempRxHead = 0;
+        uart1RxHead = 0;
 		// ERROR! Receive buffer overflow 
 	} 
     else
     {
-        uart1RxBuffer[uart1RxHead] = regValue;
-		uart1RxHead = tempRxHead;
+//        uart1RxBuffer[uart1RxHead] = regValue;
+//		uart1RxHead = tempRxHead;
+        uart1RxHead++;
 		uart1RxCount++;
        
 	}
-    //
+    
+    // Error : Index order is changed
     if(uart1RxHead==7)
     {
-        tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
-        uart1RxHead=0;
+//        tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
+//        uart1RxHead=0;
 //        uart1RxCount=0;
     }
     

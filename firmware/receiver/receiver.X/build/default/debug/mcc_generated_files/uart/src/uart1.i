@@ -27320,24 +27320,29 @@ void UART1_ReceiveISR(void)
 
     regValue = U1RXB;
 
-    tempRxHead = (uart1RxHead + 1) & ((8) - 1);
 
-    if (tempRxHead == uart1RxTail)
+    uart1RxBuffer[uart1RxHead] = regValue;
+
+    if (4 == uart1RxHead)
     {
+        tempRxHead = 0;
+        uart1RxHead = 0;
 
  }
     else
     {
-        uart1RxBuffer[uart1RxHead] = regValue;
-  uart1RxHead = tempRxHead;
+
+
+        uart1RxHead++;
   uart1RxCount++;
 
  }
 
+
     if(uart1RxHead==7)
     {
-        tempRxHead = (uart1RxHead + 1) & ((8) - 1);
-        uart1RxHead=0;
+
+
 
     }
 

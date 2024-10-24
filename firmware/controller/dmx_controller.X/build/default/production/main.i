@@ -26869,6 +26869,7 @@ void SYSTEM_Initialize(void);
 
 
 uint8_t dmxData[10*4 +1];
+int16_t num = 0;
 
 led_t updateStandbyVals(led_t currentVals){
     uint8_t r = currentVals.r;
@@ -26936,6 +26937,39 @@ void reactive(void){
     }
 }
 
+void increase_Val(void){
+    uint8_t index = 0;
+    dmxData[index++] = 0x01;
+    for(uint8_t i = 0; i < 10; i++){
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+    }
+}
+
+void increase_Num(void){
+    uint8_t index = 0;
+    dmxData[index++] = 0x01;
+    for(uint8_t i = 0; i < 10; i++){
+        dmxData[index++] = i+1;
+        dmxData[index++] = i+2;
+        dmxData[index++] = i+3;
+        dmxData[index++] = i+4;
+    }
+}
+
+void button_Num(void){
+    uint8_t index = 0;
+    dmxData[index++] = 0x01;
+    for(uint8_t i = 0; i < 10; i++){
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+        dmxData[index++] = num;
+    }
+}
+
 
 
 
@@ -26957,22 +26991,29 @@ int main(void)
 
 
 
+
+
     RC4 = 1;
+
     mode = REACTIVE;
     PreKey = CurKey = RA2;
     while(1)
     {
         CurKey = RA2;
-        if(CurKey == 0 && PreKey == 1)
+
+        if(PORTAbits.RA2 == 0)
         {
             switch(mode){
                 case STANDBY:
                     standby();
                     break;
                 case REACTIVE:
-                    reactive();
-                    PORTB ^= 0xFF;
-                    _delay((unsigned long)((1000)*(64000000U/4000.0)));
+
+                      increase_Val();
+
+
+                      PORTB ^= 0xFF;
+
                     break;
                 default:
                     break;
@@ -26982,7 +27023,14 @@ int main(void)
                 DMX_sync();
                 DMAnCON0bits.SIRQEN = 1;
             }
+
+            num = num + 1;
+            _delay((unsigned long)((1000)*(64000000U/4000.0)));
         }
-        PreKey = CurKey;
+
+        if(num >= 255)
+        {
+            num = 0;
+        }
     }
 }

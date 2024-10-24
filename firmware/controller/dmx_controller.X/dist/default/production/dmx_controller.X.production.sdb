@@ -22,7 +22,7 @@ LVD_TRIP_POINT_4p40 13
 LVD_TRIP_POINT_4p76 14
 LVD_TRIP_POINT_4p80 15
 ]
-"83 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
+"84 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
 [e E15320 . `uc
 INVALID 0
 STANDBY 1
@@ -64,13 +64,13 @@ REACTIVE 2
 [v _DMX_send_bytes DMX_send_bytes `(v  1 e 1 0 ]
 "20 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X/main.h
 [s S1247 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
-"43 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
+"44 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
 [v _updateStandbyVals updateStandbyVals `(S1247  1 e 4 0 ]
-"71
+"72
 [v _standby standby `(v  1 e 1 0 ]
-"98
-[v _reactive reactive `(v  1 e 1 0 ]
-"113
+"110
+[v _increase_Val increase_Val `(v  1 e 1 0 ]
+"147
 [v _main main `(i  1 e 2 0 ]
 "39 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -178,11 +178,11 @@ REACTIVE 2
 [v _OSCEN OSCEN `VEuc  1 e 1 @179 ]
 "5368
 [v _PRLOCK PRLOCK `VEuc  1 e 1 @180 ]
-[s S1592 . 1 `uc 1 PRLOCKED 1 0 :1:0 
+[s S1631 . 1 `uc 1 PRLOCKED 1 0 :1:0 
 ]
 "5378
-[u S1594 . 1 `S1592 1 . 1 0 ]
-[v _PRLOCKbits PRLOCKbits `VES1594  1 e 1 @180 ]
+[u S1633 . 1 `S1631 1 . 1 0 ]
+[v _PRLOCKbits PRLOCKbits `VES1633  1 e 1 @180 ]
 "5456
 [v _DMA1PR DMA1PR `VEuc  1 e 1 @182 ]
 "6556
@@ -195,7 +195,7 @@ REACTIVE 2
 [v _DMAnSSZ DMAnSSZ `VEus  1 e 2 @246 ]
 "7654
 [v _DMAnSSA DMAnSSA `VEum  1 e 3 @248 ]
-[s S1291 . 1 `uc 1 XIP 1 0 :1:0 
+[s S1306 . 1 `uc 1 XIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 AIRQEN 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -204,17 +204,17 @@ REACTIVE 2
 `uc 1 EN 1 0 :1:7 
 ]
 "7876
-[u S1299 . 1 `S1291 1 . 1 0 ]
-[v _DMAnCON0bits DMAnCON0bits `VES1299  1 e 1 @251 ]
-[s S1557 . 1 `uc 1 SSTP 1 0 :1:0 
+[u S1314 . 1 `S1306 1 . 1 0 ]
+[v _DMAnCON0bits DMAnCON0bits `VES1314  1 e 1 @251 ]
+[s S1596 . 1 `uc 1 SSTP 1 0 :1:0 
 `uc 1 SMODE 1 0 :2:1 
 `uc 1 SMR 1 0 :2:3 
 `uc 1 DSTP 1 0 :1:5 
 `uc 1 DMODE 1 0 :2:6 
 ]
 "7920
-[u S1563 . 1 `S1557 1 . 1 0 ]
-[v _DMAnCON1bits DMAnCON1bits `VES1563  1 e 1 @252 ]
+[u S1602 . 1 `S1596 1 . 1 0 ]
+[v _DMAnCON1bits DMAnCON1bits `VES1602  1 e 1 @252 ]
 "8020
 [v _DMAnSIRQ DMAnSIRQ `VEuc  1 e 1 @254 ]
 "8790
@@ -248,7 +248,7 @@ REACTIVE 2
 [v _TRISB TRISB `VEuc  1 e 1 @329 ]
 "9333
 [v _TRISC TRISC `VEuc  1 e 1 @330 ]
-[s S1481 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S1520 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -258,10 +258,22 @@ REACTIVE 2
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "9350
-[u S1490 . 1 `S1481 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES1490  1 e 1 @330 ]
+[u S1529 . 1 `S1520 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES1529  1 e 1 @330 ]
 "9395
 [v _TRISE TRISE `VEuc  1 e 1 @332 ]
+[s S1284 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"9419
+[u S1293 . 1 `S1284 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1293  1 e 1 @336 ]
 "9464
 [v _PORTB PORTB `VEuc  1 e 1 @337 ]
 "10729
@@ -352,7 +364,7 @@ REACTIVE 2
 [v _U1CON1bits U1CON1bits `VES942  1 e 1 @705 ]
 "18068
 [v _U1CON2 U1CON2 `VEuc  1 e 1 @706 ]
-[s S1413 . 1 `uc 1 FLO 1 0 :2:0 
+[s S1452 . 1 `uc 1 FLO 1 0 :2:0 
 `uc 1 TXPOL 1 0 :1:2 
 `uc 1 C0EN 1 0 :1:3 
 `uc 1 STP 1 0 :2:4 
@@ -360,27 +372,27 @@ REACTIVE 2
 `uc 1 RUNOVF 1 0 :1:7 
 ]
 "18105
-[s S1420 . 1 `uc 1 FLO0 1 0 :1:0 
+[s S1459 . 1 `uc 1 FLO0 1 0 :1:0 
 `uc 1 FLO1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 STP0 1 0 :1:4 
 `uc 1 STP1 1 0 :1:5 
 ]
-[s S1426 . 1 `uc 1 U1FLO 1 0 :2:0 
+[s S1465 . 1 `uc 1 U1FLO 1 0 :2:0 
 `uc 1 U1TXPOL 1 0 :1:2 
 `uc 1 U1C0EN 1 0 :1:3 
 `uc 1 U1STP 1 0 :2:4 
 `uc 1 U1RXPOL 1 0 :1:6 
 `uc 1 U1RUNOVF 1 0 :1:7 
 ]
-[s S1433 . 1 `uc 1 U1FLO0 1 0 :1:0 
+[s S1472 . 1 `uc 1 U1FLO0 1 0 :1:0 
 `uc 1 U1FLO1 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 U1STP0 1 0 :1:4 
 `uc 1 U1STP1 1 0 :1:5 
 ]
-[u S1439 . 1 `S1413 1 . 1 0 `S1420 1 . 1 0 `S1426 1 . 1 0 `S1433 1 . 1 0 ]
-[v _U1CON2bits U1CON2bits `VES1439  1 e 1 @706 ]
+[u S1478 . 1 `S1452 1 . 1 0 `S1459 1 . 1 0 `S1465 1 . 1 0 `S1472 1 . 1 0 ]
+[v _U1CON2bits U1CON2bits `VES1478  1 e 1 @706 ]
 "18210
 [v _U1BRG U1BRG `VEus  1 e 2 @707 ]
 "18217
@@ -676,7 +688,9 @@ REACTIVE 2
 [v _U1TXMTIF U1TXMTIF `VEb  1 e 0 @5695 ]
 "41 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
 [v _dmxData dmxData `[41]uc  1 e 41 0 ]
-"112
+"42
+[v _num num `s  1 e 2 0 ]
+"146
 [v _PreKey PreKey `uc  1 e 1 0 ]
 [v _CurKey CurKey `uc  1 e 1 0 ]
 "38 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\mcc_generated_files/system/src/interrupt.c
@@ -731,50 +745,50 @@ REACTIVE 2
 [v _UART1_TxCompleteInterruptHandler UART1_TxCompleteInterruptHandler `*.37(v  1 s 2 UART1_TxCompleteInterruptHandler ]
 "106
 [v _UART1_RxCompleteInterruptHandler UART1_RxCompleteInterruptHandler `*.37(v  1 s 2 UART1_RxCompleteInterruptHandler ]
-"113 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
+"147 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"115
-[v main@mode mode `E15320  1 a 1 0 ]
-"158
+"149
+[v main@mode mode `E15320  1 a 1 2 ]
+"206
 } 0
-"71
+"72
 [v _standby standby `(v  1 e 1 0 ]
 {
-"87
+"88
 [v standby@i i `uc  1 a 1 12 ]
-"72
-[v standby@index index `uc  1 a 1 11 ]
 "73
+[v standby@index index `uc  1 a 1 11 ]
+"74
 [v standby@standby_delay_counter standby_delay_counter `uc  1 s 1 standby_delay_counter ]
 [s S1247 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
-"74
+"75
 [v standby@standbyVals standbyVals `[10]S1247  1 s 40 standbyVals ]
-"96
+"97
 } 0
 "20 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X/main.h
 [s S1247 . 4 `uc 1 g 1 0 `uc 1 r 1 1 `uc 1 b 1 2 `uc 1 w 1 3 ]
-"43 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
+"44 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\main.c
 [v _updateStandbyVals updateStandbyVals `(S1247  1 e 4 0 ]
 {
-"46
+"47
 [v updateStandbyVals@b b `uc  1 a 1 10 ]
-"45
+"46
 [v updateStandbyVals@g g `uc  1 a 1 9 ]
-"44
+"45
 [v updateStandbyVals@r r `uc  1 a 1 8 ]
-"43
+"44
 [v updateStandbyVals@currentVals currentVals `S1247  1 p 4 4 ]
-"67
+"68
 } 0
-"98
-[v _reactive reactive `(v  1 e 1 0 ]
+"110
+[v _increase_Val increase_Val `(v  1 e 1 0 ]
 {
-"101
-[v reactive@i i `uc  1 a 1 4 ]
-"99
-[v reactive@index index `uc  1 a 1 5 ]
-"107
+"113
+[v increase_Val@i i `uc  1 a 1 4 ]
+"111
+[v increase_Val@index index `uc  1 a 1 5 ]
+"119
 } 0
 "39 C:\Users\rkfmv\OneDrive\Desktop\241024\firmware\controller\dmx_controller.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

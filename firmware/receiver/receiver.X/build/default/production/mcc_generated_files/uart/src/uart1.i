@@ -27321,6 +27321,7 @@ void UART1_ReceiveISR(void)
     regValue = U1RXB;
 
     tempRxHead = (uart1RxHead + 1) & ((8) - 1);
+
     if (tempRxHead == uart1RxTail)
     {
 
@@ -27330,11 +27331,24 @@ void UART1_ReceiveISR(void)
         uart1RxBuffer[uart1RxHead] = regValue;
   uart1RxHead = tempRxHead;
   uart1RxCount++;
+
  }
+
+    if(uart1RxHead==7)
+    {
+        tempRxHead = (uart1RxHead + 1) & ((8) - 1);
+        uart1RxHead=0;
+
+    }
 
     if(UART1_RxCompleteInterruptHandler != ((void*)0))
     {
         (*UART1_RxCompleteInterruptHandler)();
+        if(uart1RxHead==7)
+        {
+            uart1RxHead=0;
+            uart1RxCount=0;
+        }
     }
 }
 
