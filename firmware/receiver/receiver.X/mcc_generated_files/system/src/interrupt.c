@@ -98,7 +98,8 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         if(rxFg)
         {
-            INTERRUPT_GlobalInterruptDisable();
+            UART1_RxInterruptHandler();     
+//            INTERRUPT_GlobalInterruptDisable();
         }
         //Unhandled Interrupt
     }

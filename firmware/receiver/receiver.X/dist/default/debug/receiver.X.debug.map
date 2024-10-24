@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.50\pic\dat\20240725155939_en.msgs \
   -pivt0x8=08h -cn -h+dist/default/debug\receiver.X.debug.sym \
   --cmf=dist/default/debug\receiver.X.debug.cmf -z -Q18F24Q24 \
-  -oC:\Users\rkfmv\AppData\Local\Temp\xcAs9e4.\driver_tmp_3.o \
+  -oC:\Users\rkfmv\AppData\Local\Temp\xcBsnq8.1\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/debug/receiver.X.debug.map \
-  --md=C:\Users\rkfmv\AppData\Local\Temp\xcAs9e4.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\rkfmv\AppData\Local\Temp\xcBsnq8.1\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0E00h-0EFFhx114 -AMEDIUMCONST=0E00h-07FFFh \
   -ACOMRAM=0501h-055Fh -AABS1=0500h-0CFFh -ABIGRAM=0501h-0CFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\rkfmv\AppData\Local\Temp\xcAs9e4.\driver_tmp_9.o \
+  C:\Users\rkfmv\AppData\Local\Temp\xcBsnq8.1\driver_tmp_9.o \
   dist/default/debug\receiver.X.debug.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 18F24Q24
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\rkfmv\AppData\Local\Temp\xcAs9e4.\driver_tmp_9.o
+C:\Users\rkfmv\AppData\Local\Temp\xcBsnq8.1\driver_tmp_9.o
                 config                           300000   300000       1D        0       4
                 init                                 1A       1A        4        4       0
                 reset_vec                             0        0        4        0       0
@@ -50,9 +50,9 @@ dist/default/debug\receiver.X.debug.o
                 text42                             18AA     18AA       16      71F       0
                 text41                             196C     196C        2      71F       0
                 text40                             196A     196A        2      71F       0
-                text39                              E3E      E3E      124      71F       0
+                text39                              E3E      E3E      126      71F       0
                 text38                             1702     1702       36      71F       0
-                text37                             1154     1154       C0      71F       0
+                text37                             1156     1156       BE      71F       0
                 text36                             1686     1686       42      71F       0
                 text35                             15EC     15EC       52      71F       0
                 text34                             1966     1966        4      71F       0
@@ -62,7 +62,7 @@ dist/default/debug\receiver.X.debug.o
                 text30                             1932     1932        A      71F       0
                 text29                             1214     1214       A6      71F       0
                 text28                             1460     1460       6A      71F       0
-                text27                             1074     1074       E0      71F       0
+                text27                             1076     1076       E0      71F       0
                 text26                             1890     1890       1A      71F       0
                 text25                             1928     1928        A      71F       0
                 text24                             191E     191E        A      71F       0
@@ -89,7 +89,7 @@ dist/default/debug\receiver.X.debug.o
                 text3                              14CA     14CA       62      71F       0
                 text2                              163E     163E       48      71F       0
                 text1                              17D2     17D2       2C      71F       0
-                text0                               F62      F62      112      71F       0
+                text0                               F64      F64      112      71F       0
                 cstackCOMRAM                        52A      52A       23      501       1
                 cstackBANK5                         5A7      5A7        D      560       1
                 bssBANK6                            600      600       90      600       1
@@ -112,9 +112,9 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text42                             18AA     18AA       16         0
                 text41                             196C     196C        2         0
                 text40                             196A     196A        2         0
-                text39                              E3E      E3E      124         0
+                text39                              E3E      E3E      126         0
                 text38                             1702     1702       36         0
-                text37                             1154     1154       C0         0
+                text37                             1156     1156       BE         0
                 text36                             1686     1686       42         0
                 text35                             15EC     15EC       52         0
                 text34                             1966     1966        4         0
@@ -124,7 +124,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text30                             1932     1932        A         0
                 text29                             1214     1214       A6         0
                 text28                             1460     1460       6A         0
-                text27                             1074     1074       E0         0
+                text27                             1076     1076       E0         0
                 text26                             1890     1890       1A         0
                 text25                             1928     1928        A         0
                 text24                             191E     191E        A         0
@@ -151,7 +151,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text3                              14CA     14CA       62         0
                 text2                              163E     163E       48         0
                 text1                              17D2     17D2       2C         0
-                text0                               F62      F62      112         0
+                text0                               F64      F64      112         0
                 cinit                              13E4     13E4       7C         0
                 idataBANK5                         18C0     18C0        E         0
                 idataCOMRAM                        195A     195A        6         0
@@ -324,7 +324,7 @@ _INT2_InterruptHandler                                        bssCOMRAM    00050
 _INT2_SetInterruptHandler                                     text23       001914
 _INTCON0bits                                                  (abs)        0004D6
 _INTERRUPT_Initialize                                         text22       00176E
-_INTERRUPT_InterruptManager                                   text37       001154
+_INTERRUPT_InterruptManager                                   text37       001156
 _IOCAF                                                        (abs)        000407
 _IOCAN                                                        (abs)        000406
 _IOCAP                                                        (abs)        000405
@@ -427,7 +427,7 @@ _PWM2_16BIT_Slice1Output1_SetInterruptHandler                 text15       0018E
 _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler             (abs)        000000
 _PWM2_16BIT_Slice1Output2_InterruptHandler                    bssCOMRAM    000519
 _PWM2_16BIT_Slice1Output2_SetInterruptHandler                 text14       0018D8
-_PWM_SetDuty                                                  text27       001074
+_PWM_SetDuty                                                  text27       001076
 _RB0PPS                                                       (abs)        000209
 _RB1I2C                                                       (abs)        000286
 _RB1PPS                                                       (abs)        00020A
@@ -807,7 +807,7 @@ __end_of_PWM2_16BIT_SetSlice1Output1DutyCycleRegister         text31       00194
 __end_of_PWM2_16BIT_SetSlice1Output2DutyCycleRegister         text30       00193C
 __end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler         text15       0018EC
 __end_of_PWM2_16BIT_Slice1Output2_SetInterruptHandler         text14       0018E2
-__end_of_PWM_SetDuty                                          text27       001154
+__end_of_PWM_SetDuty                                          text27       001156
 __end_of_SYSTEM_Initialize                                    text5        001820
 __end_of_TMR0_DefaultOverflowCallback                         text45       001970
 __end_of_TMR0_Initialize                                      text11       0017D2
@@ -821,14 +821,14 @@ __end_of_UART1_FramingErrorCallbackRegister                   text10       00189
 __end_of_UART1_Initialize                                     text7        0013E4
 __end_of_UART1_OverrunErrorCallbackRegister                   text9        001874
 __end_of_UART1_ParityErrorCallbackRegister                    text8        001858
-__end_of_UART1_ReceiveISR                                     text39       000F62
+__end_of_UART1_ReceiveISR                                     text39       000F64
 __end_of_UART1_RxCompleteCallbackRegister                     text4        00183C
 __end_of_UART1_TransmitISR                                    text38       001738
 __end_of_VDDIO2_Initialize                                    text6        001966
 __end_of___lldiv                                              text29       0012BA
 __end_of___lmul                                               text28       0014CA
 __end_of__initialization                                      cinit        001456
-__end_of_main                                                 text0        001074
+__end_of_main                                                 text0        001076
 __end_of_reactive                                             text2        001686
 __end_of_setAllLeds                                           text1        0017FE
 __end_of_setLed                                               text3        00152C
@@ -847,7 +847,7 @@ __pidataBANK5                                                 idataBANK5   0018C
 __pidataCOMRAM                                                idataCOMRAM  00195A
 __pivt0x8                                                     ivt0x8       000008
 __psmallconst                                                 smallconst   000E00
-__ptext0                                                      text0        000F62
+__ptext0                                                      text0        000F64
 __ptext1                                                      text1        0017D2
 __ptext10                                                     text10       001874
 __ptext11                                                     text11       0017A2
@@ -867,7 +867,7 @@ __ptext23                                                     text23       00191
 __ptext24                                                     text24       00191E
 __ptext25                                                     text25       001928
 __ptext26                                                     text26       001890
-__ptext27                                                     text27       001074
+__ptext27                                                     text27       001076
 __ptext28                                                     text28       001460
 __ptext29                                                     text29       001214
 __ptext3                                                      text3        0014CA
@@ -878,7 +878,7 @@ __ptext33                                                     text33       00195
 __ptext34                                                     text34       001966
 __ptext35                                                     text35       0015EC
 __ptext36                                                     text36       001686
-__ptext37                                                     text37       001154
+__ptext37                                                     text37       001156
 __ptext38                                                     text38       001702
 __ptext39                                                     text39       000E3E
 __ptext4                                                      text4        001820
@@ -901,7 +901,7 @@ _c                                                            dataCOMRAM   00054
 _d                                                            dataBANK5    0005A5
 _green                                                        dataBANK5    00059D
 _ledData                                                      bssBANK6     000600
-_main                                                         text0        000F62
+_main                                                         text0        000F64
 _off                                                          bssBANK5     00057C
 _reactive                                                     text2        00163E
 _red                                                          dataBANK5    0005A1
@@ -964,9 +964,9 @@ mcc_generated_files/system/src/interrupt.c
 		_INT1_SetInterruptHandler		CODE           	191E	0000	10
 		_INT2_SetInterruptHandler		CODE           	1914	0000	10
 		_INTERRUPT_Initialize		CODE           	176E	0000	52
-		_INTERRUPT_InterruptManager		CODE           	1154	0000	192
+		_INTERRUPT_InterruptManager		CODE           	1156	0000	190
 
-mcc_generated_files/system/src/interrupt.c estimated size: 274
+mcc_generated_files/system/src/interrupt.c estimated size: 272
 
 mcc_generated_files/pwm/src/pwm1_16bit.c
 		_PWM1_16BIT_Period_SetInterruptHandler		CODE           	190A	0000	10
@@ -989,13 +989,13 @@ mcc_generated_files/uart/src/uart1.c
 		_UART1_RxCompleteCallbackRegister		CODE           	1820	0000	28
 		_UART1_FramingErrorCallbackRegister		CODE           	1874	0000	28
 		_UART1_OverrunErrorCallbackRegister		CODE           	1858	0000	28
-		_UART1_ReceiveISR		CODE           	0E3E	0000	292
+		_UART1_ReceiveISR		CODE           	0E3E	0000	294
 		_UART1_Initialize		CODE           	135C	0000	136
 		_UART1_DefaultFramingErrorCallback		CODE           	196C	0000	2
 		_UART1_TransmitISR		CODE           	1702	0000	54
 		_UART1_ParityErrorCallbackRegister		CODE           	183C	0000	28
 
-mcc_generated_files/uart/src/uart1.c estimated size: 598
+mcc_generated_files/uart/src/uart1.c estimated size: 600
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__lldiv.c
 		___lldiv       		CODE           	1214	0000	166
@@ -1039,9 +1039,9 @@ dmx.c estimated size: 82
 
 main.c
 		_setAllLeds    		CODE           	17D2	0000	44
-		_PWM_SetDuty   		CODE           	1074	0000	224
+		_PWM_SetDuty   		CODE           	1076	0000	224
 		_DMXRcvCallback		CODE           	18AA	0000	22
-		_main          		CODE           	0F62	0000	274
+		_main          		CODE           	0F64	0000	274
 		_reactive      		CODE           	163E	0000	72
 		_setLed        		CODE           	14CA	0000	98
 

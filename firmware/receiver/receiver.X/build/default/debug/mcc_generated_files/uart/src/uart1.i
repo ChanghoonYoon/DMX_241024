@@ -27328,6 +27328,7 @@ void UART1_ReceiveISR(void)
         tempRxHead = 0;
         uart1RxHead = 0;
         rxFg = 1;
+        (INTCON0bits.GIE = 0);
 
  }
     else

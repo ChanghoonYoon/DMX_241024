@@ -27058,7 +27058,8 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     {
         if(rxFg)
         {
-            (INTCON0bits.GIE = 0);
+            UART1_RxInterruptHandler();
+
         }
 
     }

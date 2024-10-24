@@ -2797,24 +2797,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 2171 ]
-"173
-[; ;main.c: 173:         switch (rxData[0]) {
+"174
+[; ;main.c: 174:         switch (rxData[0]) {
 [e $U 2173  ]
 {
-"174
-[; ;main.c: 174:             case STANDBY:
-[e :U 2174 ]
 "175
-[; ;main.c: 175:             case REACTIVE:
-[e :U 2175 ]
+[; ;main.c: 175:             case STANDBY:
+[e :U 2174 ]
 "176
-[; ;main.c: 176:                 reactive();
-[e ( _reactive ..  ]
+[; ;main.c: 176:             case REACTIVE:
+[e :U 2175 ]
 "177
-[; ;main.c: 177:                 break;
-[e $U 2172  ]
+[; ;main.c: 177:                 reactive();
+[e ( _reactive ..  ]
 "178
-[; ;main.c: 178:         }
+[; ;main.c: 178:                 break;
+[e $U 2172  ]
+"179
+[; ;main.c: 179:         }
 }
 [e $U 2172  ]
 [e :U 2173 ]
@@ -2822,13 +2822,13 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ . `E15484 2 2175
  2172 ]
 [e :U 2172 ]
-"179
-[; ;main.c: 179:     }
+"180
+[; ;main.c: 180:     }
 }
 [e :U 2167 ]
 [e $U 2168  ]
 [e :U 2169 ]
-"180
-[; ;main.c: 180: }
+"181
+[; ;main.c: 181: }
 [e :UE 2166 ]
 }

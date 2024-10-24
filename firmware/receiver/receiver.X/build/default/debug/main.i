@@ -27219,6 +27219,7 @@ int main(void)
         _delay((unsigned long)((1)*(64000000U/4000.0)));
 
         if(rxFg==1){(INTCON0bits.GIE = 1);}
+
         switch (rxData[0]) {
             case STANDBY:
             case REACTIVE:
