@@ -361,6 +361,7 @@ void UART1_ReceiveISR(void)
     regValue = U1RXB;
     
     tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
+    
     if (tempRxHead == uart1RxTail) 
     {
 		// ERROR! Receive buffer overflow 
@@ -375,8 +376,9 @@ void UART1_ReceiveISR(void)
     
     if(uart1RxHead==7)
     {
+        tempRxHead = (uart1RxHead + 1) & UART1_RX_BUFFER_MASK;
         uart1RxHead=0;
-        uart1RxCount=0;
+//        uart1RxCount=0;
     }
     
     if(UART1_RxCompleteInterruptHandler != NULL)
