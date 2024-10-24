@@ -101,6 +101,24 @@ void DMXRcvCallback(uint8_t* pData, int16_t length)
     strcpy(RxBuff, pData) ;
 }
 
+
+void PWM_SetDuty(int i, uint8_t duty)
+{
+    // PWM 
+    uint16_t period = (uint16_t)PWM1PRH << 8 | PWM1PRL;
+
+    // Duty cycle 
+    uint16_t dutyCycleValue = ((uint32_t)period * duty) / 255;
+
+    // Duty cycle 
+    if(i == 1) PWM1_16BIT_SetSlice1Output1DutyCycleRegister(dutyCycleValue);
+    if(i == 2) PWM1_16BIT_SetSlice1Output2DutyCycleRegister(dutyCycleValue);
+    if(i == 3) PWM2_16BIT_SetSlice1Output1DutyCycleRegister(dutyCycleValue);
+    if(i == 4) PWM2_16BIT_SetSlice1Output2DutyCycleRegister(dutyCycleValue);
+    
+    PWM1_16BIT_LoadBufferRegisters();
+}
+
 /*
     Main application
 */
@@ -128,6 +146,11 @@ int main(void)
 
     while(1)
     {
+        PWM_SetDuty(1,0);
+        PWM_SetDuty(2,255);
+        PWM_SetDuty(3,255);
+        PWM_SetDuty(4,255);
+        
         switch (rxData[0]) {
             case STANDBY:
             case REACTIVE: // DMX sends G,R,B values that the entire led strip turns to

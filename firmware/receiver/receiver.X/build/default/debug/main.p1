@@ -12,6 +12,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33 C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\string.h
 [; ;C:\Program Files\Microchip\xc8\v2.50\pic\include\c99\string.h: 33: char *strcpy (char *restrict, const char *restrict);
 [v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"41107 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h: 41107: extern volatile unsigned char PWM1PRH __attribute__((address(0x464)));
+[v _PWM1PRH `Vuc ~T0 @X0 0 e@1124 ]
+"41087
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h: 41087: extern volatile unsigned char PWM1PRL __attribute__((address(0x463)));
+[v _PWM1PRL `Vuc ~T0 @X0 0 e@1123 ]
+"83 ./mcc_generated_files/system/../pwm/pwm1_16bit.h
+[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 83: void PWM1_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
+[v _PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
+"91
+[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 91: void PWM1_16BIT_SetSlice1Output2DutyCycleRegister(uint16_t value);
+[v _PWM1_16BIT_SetSlice1Output2DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
+"83 ./mcc_generated_files/system/../pwm/pwm2_16bit.h
+[; ;./mcc_generated_files/system/../pwm/pwm2_16bit.h: 83: void PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
+[v _PWM2_16BIT_SetSlice1Output1DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
+"91
+[; ;./mcc_generated_files/system/../pwm/pwm2_16bit.h: 91: void PWM2_16BIT_SetSlice1Output2DutyCycleRegister(uint16_t value);
+[v _PWM2_16BIT_SetSlice1Output2DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
+"101 ./mcc_generated_files/system/../pwm/pwm1_16bit.h
+[; ;./mcc_generated_files/system/../pwm/pwm1_16bit.h: 101: void PWM1_16BIT_LoadBufferRegisters(void);
+[v _PWM1_16BIT_LoadBufferRegisters `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "59 ./mcc_generated_files/system/../uart/../system/system.h
 [; ;./mcc_generated_files/system/../uart/../system/system.h: 59: void SYSTEM_Initialize(void);
@@ -26,7 +47,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "381 ./mcc_generated_files/system/../uart/uart1.h
 [; ;./mcc_generated_files/system/../uart/uart1.h: 381: void UART1_RxCompleteCallbackRegister(void (* callbackHandler)(void));
 [v _UART1_RxCompleteCallbackRegister `(v ~T0 @X0 0 ef1`*F16059 ]
-[v F16141 `(v ~T0 @X0 0 tf ]
+[v F16146 `(v ~T0 @X0 0 tf ]
 "44513 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f24q24.h: 44513:     struct {
 [s S2026 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -2617,74 +2638,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 102: }
 [e :UE 2160 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"107
-[; ;main.c: 107: int main(void)
-[v _main `(i ~T0 @X0 1 ef ]
+"105
+[; ;main.c: 105: void PWM_SetDuty(int i, uint8_t duty)
+[v _PWM_SetDuty `(v ~T0 @X0 1 ef2`i`uc ]
+"106
+[; ;main.c: 106: {
+{
+[e :U _PWM_SetDuty ]
+"105
+[; ;main.c: 105: void PWM_SetDuty(int i, uint8_t duty)
+[v _i `i ~T0 @X0 1 r1 ]
+[v _duty `uc ~T0 @X0 1 r2 ]
+"106
+[; ;main.c: 106: {
+[f ]
 "108
-[; ;main.c: 108: {
+[; ;main.c: 108:     uint16_t period = (uint16_t)PWM1PRH << 8 | PWM1PRL;
+[v _period `us ~T0 @X0 1 a ]
+[e = _period -> | << -> -> _PWM1PRH `us `ui -> 8 `i -> _PWM1PRL `ui `us ]
+"111
+[; ;main.c: 111:     uint16_t dutyCycleValue = ((uint32_t)period * duty) / 255;
+[v _dutyCycleValue `us ~T0 @X0 1 a ]
+[e = _dutyCycleValue -> / * -> _period `ul -> _duty `ul -> -> -> 255 `i `l `ul `us ]
+"114
+[; ;main.c: 114:     if(i == 1) PWM1_16BIT_SetSlice1Output1DutyCycleRegister(dutyCycleValue);
+[e $ ! == _i -> 1 `i 2162  ]
+[e ( _PWM1_16BIT_SetSlice1Output1DutyCycleRegister (1 _dutyCycleValue ]
+[e :U 2162 ]
+"115
+[; ;main.c: 115:     if(i == 2) PWM1_16BIT_SetSlice1Output2DutyCycleRegister(dutyCycleValue);
+[e $ ! == _i -> 2 `i 2163  ]
+[e ( _PWM1_16BIT_SetSlice1Output2DutyCycleRegister (1 _dutyCycleValue ]
+[e :U 2163 ]
+"116
+[; ;main.c: 116:     if(i == 3) PWM2_16BIT_SetSlice1Output1DutyCycleRegister(dutyCycleValue);
+[e $ ! == _i -> 3 `i 2164  ]
+[e ( _PWM2_16BIT_SetSlice1Output1DutyCycleRegister (1 _dutyCycleValue ]
+[e :U 2164 ]
+"117
+[; ;main.c: 117:     if(i == 4) PWM2_16BIT_SetSlice1Output2DutyCycleRegister(dutyCycleValue);
+[e $ ! == _i -> 4 `i 2165  ]
+[e ( _PWM2_16BIT_SetSlice1Output2DutyCycleRegister (1 _dutyCycleValue ]
+[e :U 2165 ]
+"119
+[; ;main.c: 119:     PWM1_16BIT_LoadBufferRegisters();
+[e ( _PWM1_16BIT_LoadBufferRegisters ..  ]
+"120
+[; ;main.c: 120: }
+[e :UE 2161 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"125
+[; ;main.c: 125: int main(void)
+[v _main `(i ~T0 @X0 1 ef ]
+"126
+[; ;main.c: 126: {
 {
 [e :U _main ]
 [f ]
-"109
-[; ;main.c: 109:     setAllLeds(off);
-[e ( _setAllLeds (1 _off ]
-"111
-[; ;main.c: 111:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"116
-[; ;main.c: 116:     DMX_Initialize();
-[e ( _DMX_Initialize ..  ]
-"117
-[; ;main.c: 117:     DMA_Initialize();
-[e ( _DMA_Initialize ..  ]
-"120
-[; ;main.c: 120:     UART1_RxCompleteCallbackRegister(DMXRcvCallback);
-[e ( _UART1_RxCompleteCallbackRegister (1 -> &U _DMXRcvCallback `*F16141 ]
-"123
-[; ;main.c: 123:     (INTCON0bits.GIE = 1);
-[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
 "127
-[; ;main.c: 127:     RC4 = 0;
-[e = _RC4 -> -> 0 `i `b ]
+[; ;main.c: 127:     setAllLeds(off);
+[e ( _setAllLeds (1 _off ]
 "129
-[; ;main.c: 129:     while(1)
-[e :U 2163 ]
-"130
-[; ;main.c: 130:     {
-{
-"131
-[; ;main.c: 131:         switch (rxData[0]) {
-[e $U 2166  ]
-{
-"132
-[; ;main.c: 132:             case STANDBY:
-[e :U 2167 ]
-"133
-[; ;main.c: 133:             case REACTIVE:
-[e :U 2168 ]
+[; ;main.c: 129:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "134
-[; ;main.c: 134:                 reactive();
-[e ( _reactive ..  ]
+[; ;main.c: 134:     DMX_Initialize();
+[e ( _DMX_Initialize ..  ]
 "135
-[; ;main.c: 135:                 break;
-[e $U 2165  ]
-"136
-[; ;main.c: 136:         }
-}
-[e $U 2165  ]
-[e :U 2166 ]
-[e [\ *U + &U _rxData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rxData `ui `ux , $ . `E15484 1 2167
- , $ . `E15484 2 2168
- 2165 ]
-[e :U 2165 ]
-"137
-[; ;main.c: 137:     }
-}
-[e :U 2162 ]
-[e $U 2163  ]
-[e :U 2164 ]
+[; ;main.c: 135:     DMA_Initialize();
+[e ( _DMA_Initialize ..  ]
 "138
-[; ;main.c: 138: }
-[e :UE 2161 ]
+[; ;main.c: 138:     UART1_RxCompleteCallbackRegister(DMXRcvCallback);
+[e ( _UART1_RxCompleteCallbackRegister (1 -> &U _DMXRcvCallback `*F16146 ]
+"141
+[; ;main.c: 141:     (INTCON0bits.GIE = 1);
+[e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
+"145
+[; ;main.c: 145:     RC4 = 0;
+[e = _RC4 -> -> 0 `i `b ]
+"147
+[; ;main.c: 147:     while(1)
+[e :U 2168 ]
+"148
+[; ;main.c: 148:     {
+{
+"149
+[; ;main.c: 149:         PWM_SetDuty(1,0);
+[e ( _PWM_SetDuty (2 , -> 1 `i -> -> 0 `i `uc ]
+"150
+[; ;main.c: 150:         PWM_SetDuty(2,255);
+[e ( _PWM_SetDuty (2 , -> 2 `i -> -> 255 `i `uc ]
+"151
+[; ;main.c: 151:         PWM_SetDuty(3,255);
+[e ( _PWM_SetDuty (2 , -> 3 `i -> -> 255 `i `uc ]
+"152
+[; ;main.c: 152:         PWM_SetDuty(4,255);
+[e ( _PWM_SetDuty (2 , -> 4 `i -> -> 255 `i `uc ]
+"154
+[; ;main.c: 154:         switch (rxData[0]) {
+[e $U 2171  ]
+{
+"155
+[; ;main.c: 155:             case STANDBY:
+[e :U 2172 ]
+"156
+[; ;main.c: 156:             case REACTIVE:
+[e :U 2173 ]
+"157
+[; ;main.c: 157:                 reactive();
+[e ( _reactive ..  ]
+"158
+[; ;main.c: 158:                 break;
+[e $U 2170  ]
+"159
+[; ;main.c: 159:         }
+}
+[e $U 2170  ]
+[e :U 2171 ]
+[e [\ *U + &U _rxData * -> -> -> 0 `i `ui `ux -> -> # *U &U _rxData `ui `ux , $ . `E15484 1 2172
+ , $ . `E15484 2 2173
+ 2170 ]
+[e :U 2170 ]
+"160
+[; ;main.c: 160:     }
+}
+[e :U 2167 ]
+[e $U 2168  ]
+[e :U 2169 ]
+"161
+[; ;main.c: 161: }
+[e :UE 2166 ]
 }
